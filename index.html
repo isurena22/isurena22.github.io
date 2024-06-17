@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje para Miguel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: turquoise;
+        }
+        .imagen-gato {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .btn-grande {
+            background-color: red;
+            color: black;
+            border: none;
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .btn-grande:hover {
+            transform: scale(1.1);
+        }
+        .btn-rojo, .btn-verde {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        .btn-verde {
+            background-color: green;
+        }
+        .btn-rojo:hover, .btn-verde:hover {
+            transform: scale(1.1);
+        }
+        .btn-rojo.mover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola, Miguel</h1>
+    <img class="imagen-gato" src="https://i.pinimg.com/originals/7e/85/83/7e85839c9f701134f1213debb1d92e25.gif" alt="Gato tierno">
+    <button class="btn-grande" onclick="mostrarMensaje()">Te quería decir...</button>
+
+    <div id="mensaje" style="display: none;">
+        <img src="https://s1.stickers.cloud/packs/3aa0fb01-19f6-406b-8ad0-2dfc9e64114d/png/b736dd6f-9f73-4564-8d51-228e33f55843.png" alt="Ratita triste">
+        <p style="color: red; font-size: 28px; margin-top: 20px;">Lamento haber parecido insensible con tus sentimientos y tu accidente en tu patita, no era mi intención... Yo te quiero mucho y quiero que siempre estés bien <span style="font-size: 36px;">❤️</span></p>
+        <img src="https://c.tenor.com/r7PKNiF--nUAAAAj/mochi-cry.gif" alt="Gatito con corazón">
+        <p style="color: red; font-size: 28px; margin-top: 20px;">¿Me perdonas?</p>
+        <button class="btn-rojo" onclick="moverBoton()">No</button>
+        <button class="btn-verde" onclick="mostrarPerdon()">Sí</button>
+    </div>
+
+    <div id="perdon" style="display: none;">
+        <img src="https://media1.tenor.com/images/cd4f8199d49badf7b90277f8b13f5186/tenor.gif?itemid=12816950" alt="Gato negro con patita quebrada">
+        <p style="color: turquoise; font-size: 36px; margin-top: 20px;">¡Cuídate mucho mientras nos tomamos este tiempo, te voy a extrañar mucho, hasta pronto!</p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById('mensaje').style.display = 'block';
+        }
+
+        function moverBoton() {
+            var btnNo = document.querySelector(".btn-rojo");
+            btnNo.classList.add("mover");
+        }
+
+        function mostrarPerdon() {
+            document.getElementById('mensaje').style.display = 'none';
+            document.getElementById('perdon').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
